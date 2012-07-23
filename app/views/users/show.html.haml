@@ -1,0 +1,23 @@
+
+.row
+  .well.span6
+    .pull-right
+      = link_to 'Edit', edit_user_path(@user)
+      %i.icon-edit
+    %p
+      %b Email:
+      = @user.email
+    %p
+      %b Display Name:
+      = @user.display_name
+
+- if @user.tasks.any?
+  %h2 Tasks
+  -for task in @user.tasks
+    %h3
+    = task.description
+    %p
+      %h6
+        = "To be completed on #{task.date_to_be_completed}"
+
+= link_to 'New Task', new_user_task_path(@user), class: 'btn'

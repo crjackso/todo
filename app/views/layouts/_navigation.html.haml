@@ -1,0 +1,17 @@
+= link_to "ToDo", root_path, :class => 'brand'
+
+%ul.nav.pull-right
+  - if signed_in?
+    %li
+      hi
+    %li#fat-menu.dropdown
+      %a.dropdown-toggle{:href => '#', 'data-toggle' => 'dropdown'}
+        Account
+        %b.caret
+      %ul.dropdown-menu
+        -# %li= link_to 'Profile', current_user
+        -#         %li= link_to 'Settings', edit_user_path(current_user)
+        %li.divider
+        %li= link_to 'Sign Out', signout_path, id: 'sign_out', method: 'delete'
+  -else
+    %li= link_to 'Sign In', '#', id: 'signin_prompt', 'data-toggle' => 'modal', 'data-target' => '#loginModal'

@@ -1,0 +1,16 @@
+- if signed_in?
+	.row
+		%aside.span4
+			%section
+				= render 'shared/user_info'
+			%section
+				= render 'shared/stats'
+			%section
+				= render 'shared/micropost-form'
+		.span8
+			%h3 Yes Sir
+-else
+	.center.hero-unit
+		%h1 Welcome to the To-Do App!
+		%p
+			This is the home page
